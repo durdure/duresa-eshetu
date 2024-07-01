@@ -1,13 +1,27 @@
 import React from 'react'
 import styles from "./HeroStyle.module.css"
 import myImage from "../../assets/Images/myImage.jpg"
-import themeIcon from "../../assets/Images/sun.svg"
-import TwitterIcon from "../../assets/Images/twitter-light.svg"
-import LinkedInIcon from "../../assets/Images/linkedin-light.svg"
-import GithubIcon from "../../assets/Images/github-light.svg"
+
+import sun from '../../assets/Images/sun.svg';
+import moon from '../../assets/Images/moon.svg';
+import twitterLight from '../../assets/Images/twitter-light.svg';
+import twitterDark from '../../assets/Images/twitter-dark.svg';
+import githubLight from '../../assets/Images/github-light.svg';
+import githubDark from '../../assets/Images/github-dark.svg';
+import linkedinLight from '../../assets/Images/linkedin-light.svg';
+import linkedinDark from '../../assets/Images/linkedin-dark.svg';
 import resume from "../../assets/Files/Duresa-Eshetu.pdf"
 
+
 function Hero() {
+  const { theme, toggleTheme } = useTheme();
+
+  const themeIcon = theme === 'light' ? sun : moon;
+  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
+  const githubIcon = theme === 'light' ? githubLight : githubDark;
+  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+
+
   return  <section id="hero" className={styles.container}>
    <div className={styles.colorModeContainet}>
       <img
@@ -18,6 +32,7 @@ function Hero() {
       <img
         className={styles.colorModeIcon}
         src={themeIcon} alt="Color mode Icon" />
+        onClick={toggleTheme}
    </div>
    <div className={styles.info}>
       <h1>
@@ -26,19 +41,17 @@ function Hero() {
         Eshetu
       </h1>
       <h2>Frontend Developer</h2>
-     <span>
-      <a href="https://twitter.com/" target='_blank'>
-      <img src={TwitterIcon} alt="twitter icon" />
-      </a>
-
-      <a href="https://linkedin.com/" target='_blank'>
-      <img src={LinkedInIcon} alt="linkedin icon" />
-      </a>
-
-      <a href="https://github.com/" target='_blank'>
-      <img src={GithubIcon} alt="github icon" />
-      </a>
-     </span>
+      <span>
+          <a href="https://twitter.com/" target="_blank">
+            <img src={twitterIcon} alt="Twitter icon" />
+          </a>
+          <a href="https://github.com/" target="_blank">
+            <img src={githubIcon} alt="Github icon" />
+          </a>
+          <a href="https://linkedin.com/" target="_blank">
+            <img src={linkedinIcon} alt="Linkedin icon" />
+          </a>
+        </span>
      <p>
       I am a Frontend Developer based in Addis Ababa, Ethiopia. 
       I specialize in building websites and web applications using modern technologies.
