@@ -1,10 +1,14 @@
-
+import React from 'react'
+import Hero from './Sections/Hero/Hero'
 import './App.css'
 
 function App() {
-    console.log("test")
-    return <>Hero</>
-  
+    return (
+        <>
+        <Hero/>
+        </>
+    )
+ 
 }
 
 export default App
