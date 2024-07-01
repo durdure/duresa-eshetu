@@ -1,39 +1,46 @@
 import React from 'react'
 import styles from "./HeroStyle.module.css"
-import myImage from "../../assets/Images/myImage.jpg"
+import myImage from "../../assets/Images/myImage.jpg" 
+import moon from "../../assets/Images/moon.svg"
+import sun from '../../assets/Images/sun.svg'
+import twitterLight from "../../assets/Images/twitter-light.svg"
+import twitterDark from "../../assets/Images/twitter-dark.svg"
+import githubLight from "../../assets/Images/github-light.svg"
+import githubDark from "../../assets/Images/github-dark.svg"
+import linkedinLight from "../../assets/Images/linkedin-light.svg"
+import linkedinDark from "../../assets/Images/linkedin-dark.svg"
 
-import sun from '../../assets/Images/sun.svg';
-import moon from '../../assets/Images/moon.svg';
-import twitterLight from '../../assets/Images/twitter-light.svg';
-import twitterDark from '../../assets/Images/twitter-dark.svg';
-import githubLight from '../../assets/Images/github-light.svg';
-import githubDark from '../../assets/Images/github-dark.svg';
-import linkedinLight from '../../assets/Images/linkedin-light.svg';
-import linkedinDark from '../../assets/Images/linkedin-dark.svg';
 import resume from "../../assets/Files/Duresa-Eshetu.pdf"
+
+import { useTheme } from "../../common/ThemeContext"
 
 
 function Hero() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme()
 
-  const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
-  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+  const themeIcon = theme === "light" ? moon : sun
+  const twitterIcon = theme === "light" ? twitterLight : twitterDark
+  const githubIcon = theme === "light" ? githubLight : githubDark
+  const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark
+ 
 
 
-  return  <section id="hero" className={styles.container}>
-   <div className={styles.colorModeContainet}>
+  return (
+  <section id="hero" className={styles.container}>
+   <div className={styles.colorModeContainer}>
       <img
         className={styles.hero} 
         src={myImage}
         alt='Profile picture of Duresa Eshetu'
       />
       <img
-        className={styles.colorModeIcon}
-        src={themeIcon} alt="Color mode Icon" />
-        onClick={toggleTheme}
+          className={styles.colorMode}
+          src={themeIcon}
+          alt="Color mode icon"
+          onClick={toggleTheme}
+      />
    </div>
+
    <div className={styles.info}>
       <h1>
         Duresa 
@@ -52,7 +59,7 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-     <p>
+     <p className={styles.description }>
       I am a Frontend Developer based in Addis Ababa, Ethiopia. 
       I specialize in building websites and web applications using modern technologies.
      </p>
@@ -63,7 +70,7 @@ function Hero() {
       </a>
    </div>
   </section>
-  
+  )
 }
 
 export default Hero
