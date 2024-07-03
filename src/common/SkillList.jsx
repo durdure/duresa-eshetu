@@ -1,8 +1,9 @@
-import React from 'react'
-
-function SkillList() {
+function SkillList({src, skill}) {
   return (
-    <div>SkillList</div>
+  <span>
+    <img src={src} alt="check mark Icon" />
+    <p>{skill}</p>
+  </span>
   )
 }
 
