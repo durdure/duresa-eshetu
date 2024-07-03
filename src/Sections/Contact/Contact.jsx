@@ -52,7 +52,7 @@ function Contact() {
                 type="text"
                 name='email'
                 id='email'
-                placeholder='Name'
+                placeholder='Email'
                 required
                  />
             </div>
