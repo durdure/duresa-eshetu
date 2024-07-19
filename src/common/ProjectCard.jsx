@@ -1,5 +1,6 @@
 import React from 'react'
-import viber from "./../assets/Images/viberr.png"
+import viber from "./../assets/Images/logomain (1).png"
+import vibera from "./../assets/Images/GUGEE focus 2.png"
 
 
 function ProjectCard() {
@@ -13,7 +14,7 @@ function ProjectCard() {
       </a>
 
       <a href="https://github.com/durdure/AASTU_focus">
-        <img className='hoverImage' src={viber} alt="movieye logo" />
+        <img className='hoverImage' src={vibera} alt="movieye logo" />
         <h3>aastuFocus</h3>
         <p>aastu fellowship web app</p>
       </a>
