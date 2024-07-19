@@ -12,10 +12,10 @@ function ProjectCard() {
     
       </a>
 
-      <a href="https://github.com/durdure/movieye.git">
+      <a href="https://github.com/durdure/AASTU_focus">
         <img className='hoverImage' src={viber} alt="movieye logo" />
-        <h3>Movieye</h3>
-        <p>Streaning Web App</p>
+        <h3>aastuFocus</h3>
+        <p>aastu fellowship web app</p>
       </a>
     </>
    
